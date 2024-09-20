@@ -6,6 +6,8 @@ var initial_modulate : Color = Color(0,0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_modulate = self_modulate
+	for _i in self.get_children():
+		_i.visible = false
 	pass # Replace with function body.
 
 
@@ -15,12 +17,17 @@ func _process(delta):
 
 
 func _on_pressed():
-	print("open bag")
-	if !panel_bag.visible:
-		panel_bag.visible = true
+	var control_bag = get_parent().get_node("Control_Bag")
+	if control_bag != null:
+		if !control_bag.visible:
+			control_bag.visible = true
+		else:
+			control_bag.visible = false
 	else:
-		panel_bag.visible = false
-	pass # Replace with function body.
+		pass
+	
+	#print("open bag")
+	
 
 func _on_mouse_entered():
 	self_modulate = Color(1,1,1,0.5)
@@ -30,5 +37,5 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	self_modulate = initial_modulate
-	print("exit")
+	#print("exit")
 	pass # Replace with function body.

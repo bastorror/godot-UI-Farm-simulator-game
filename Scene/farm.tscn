@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=17 format=3 uid="uid://bqv3rmqvg6a2o"]
 
+[ext_resource type="Script" path="res://Scene/farm.gd" id="1_xug1j"]
 [ext_resource type="Texture2D" uid="uid://cr5unhqlghfbr" path="res://Art/Icon/Water.png" id="3_oirp2"]
 [ext_resource type="Texture2D" uid="uid://bnbqeyxnmbtye" path="res://Art/Player/Player_girl.png" id="4_vcaii"]
 [ext_resource type="Texture2D" uid="uid://bibkuh4m0u0m3" path="res://Art/Icon/emoji_face.png" id="5_2p2j1"]
@@ -57,19 +58,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xug1j")
+metadata/_edit_lock_ = true
 
 [node name="Label_Location" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -80.0
-offset_top = 16.0
-offset_right = 80.0
-offset_bottom = 104.0
+anchors_preset = -1
+anchor_left = 0.430556
+anchor_top = 0.0246914
+anchor_right = 0.569444
+anchor_bottom = 0.160494
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 text = "Farm"
+metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer_Panel_Soil" type="GridContainer" parent="."]
 layout_mode = 1
@@ -110,6 +112,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_1"]
@@ -155,6 +158,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_2"]
@@ -200,6 +204,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_3"]
@@ -245,6 +250,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_4"]
@@ -290,6 +296,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_5"]
@@ -335,6 +342,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("3_oirp2")
 
 [node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_6"]
@@ -523,18 +531,17 @@ text = "Farm "
 
 [node name="VBoxContainer_Watring" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -92.0
-offset_right = 368.0
-offset_bottom = 670.0
+anchors_preset = -1
+anchor_left = 0.923611
+anchor_top = 0.358025
+anchor_right = 0.990278
+anchor_bottom = 0.534414
+offset_right = 435.2
+offset_bottom = 647.7
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.15, 0.15)
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton_Watering" type="TextureButton" parent="VBoxContainer_Watring"]
 custom_minimum_size = Vector2(50, 50)
@@ -551,10 +558,10 @@ vertical_alignment = 1
 
 [node name="TextureButton_Bag" parent="." instance=ExtResource("5_27e20")]
 layout_mode = 1
-anchor_left = 0.868056
-anchor_top = 0.0246914
-anchor_right = 0.868056
-anchor_bottom = 0.0246914
+anchor_left = 0.909722
+anchor_top = 0.0123457
+anchor_right = 0.909722
+anchor_bottom = 0.0123457
 offset_right = 512.0
 offset_bottom = 512.0
 grow_horizontal = 1
