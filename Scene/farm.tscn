@@ -551,9 +551,9 @@ vertical_alignment = 1
 
 [node name="TextureButton_Bag" parent="." instance=ExtResource("5_27e20")]
 layout_mode = 1
-anchor_left = 0.888889
+anchor_left = 0.868056
 anchor_top = 0.0246914
-anchor_right = 0.888889
+anchor_right = 0.868056
 anchor_bottom = 0.0246914
 offset_right = 512.0
 offset_bottom = 512.0
