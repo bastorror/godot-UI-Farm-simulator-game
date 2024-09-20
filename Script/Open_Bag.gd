@@ -18,6 +18,7 @@ func _on_pressed():
 	print("open bag")
 	if !panel_bag.visible:
 		panel_bag.visible = true
+		print("visible")
 	else:
 		panel_bag.visible = false
 	pass # Replace with function body.
