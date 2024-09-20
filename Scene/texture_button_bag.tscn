@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://t6ng2t2ive67"]
 
 [ext_resource type="Texture2D" uid="uid://c0gpewc6bj3mm" path="res://Art/Icon/backpack.png" id="1_gho41"]
-[ext_resource type="Script" path="res://Scene/Open_Bag.gd" id="2_q3ems"]
+[ext_resource type="Script" path="res://Script/Open_Bag.gd" id="2_q3ems"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fouf6"]
 corner_radius_top_left = 90
