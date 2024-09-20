@@ -14,8 +14,8 @@ func _ready():
 	button_increase = get_parent().get_node("Button_increase")
 	label_item_name = get_parent().get_node("Label_item_qty")
 	
-	print(button_decrease.button_pressed)
-	print(button_increase)
+	#print(button_decrease.button_pressed)
+	#print(button_increase)
 	
 	pass # Replace with function body.
 
@@ -32,7 +32,7 @@ func _process(delta):
 			qty -= 1
 		is_pressed_decrase = false
 		change_qty_value(qty)
-		print(qty)
+		#print(qty)
 	# ---------------------------------------------------------
 	
 	# one click increase value
@@ -43,7 +43,7 @@ func _process(delta):
 		qty += 1
 		is_pressed_incrase = false
 		change_qty_value(qty)
-		print(qty)
+		#print(qty)
 	# ---------------------------------------------------------
 	#print(button_decrease.button_pressed)
 	
