@@ -50,3 +50,7 @@ func _process(delta):
 func change_qty_value(qty : int):
 	label_item_name.text = str(qty)
 	pass
+
+func reset_qty_value():
+	qty = 0
+	change_qty_value(qty)

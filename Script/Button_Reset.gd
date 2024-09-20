@@ -15,7 +15,6 @@ func _process(delta):
 
 func _on_pressed():
 	for i in v_box_container_list_item.get_child_count():
-		get_node("../../VBoxContainer_List_Item/VBoxContainer_Item"+str(i+1)+"/HBoxContainer_Item_1/Label_item_qty").text = str(0)
+		get_node("../../VBoxContainer_List_Item/VBoxContainer_Item"+str(i+1)+"/HBoxContainer_Item_1/Label_item_qty").reset_qty_value()
 		
-		print(i)
 	pass # Replace with function body.
