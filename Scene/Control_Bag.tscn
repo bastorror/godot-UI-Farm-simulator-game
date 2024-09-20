@@ -529,31 +529,31 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="VBoxContainer_Item" type="VBoxContainer" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item"]
+[node name="VBoxContainer_Item1" type="VBoxContainer" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer_Item_1" type="HBoxContainer" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item"]
+[node name="HBoxContainer_Item_1" type="HBoxContainer" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item1"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 0
 
-[node name="Label_item_name" type="Label" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item/HBoxContainer_Item_1"]
+[node name="Label_item_name" type="Label" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item1/HBoxContainer_Item_1"]
 layout_mode = 2
 text = "Flower"
 
-[node name="Button_decrease" type="Button" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item/HBoxContainer_Item_1"]
+[node name="Button_decrease" type="Button" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item1/HBoxContainer_Item_1"]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ul3i7")
 text = "<"
 
-[node name="Label_item_qty" type="Label" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item/HBoxContainer_Item_1"]
+[node name="Label_item_qty" type="Label" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item1/HBoxContainer_Item_1"]
 layout_mode = 2
 text = "0"
 script = ExtResource("1_us3e2")
 
-[node name="Button_increase" type="Button" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item/HBoxContainer_Item_1"]
+[node name="Button_increase" type="Button" parent="Panel_Console/VBoxContainer_Console/VBoxContainer_List_Item/VBoxContainer_Item1/HBoxContainer_Item_1"]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u52cm")
@@ -790,3 +790,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8gg5u")
 text = "Confirm"
+
+[connection signal="pressed" from="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Reset" to="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Reset" method="_on_pressed"]
