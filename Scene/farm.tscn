@@ -1,0 +1,564 @@
+[gd_scene load_steps=16 format=3 uid="uid://bqv3rmqvg6a2o"]
+
+[ext_resource type="Texture2D" uid="uid://cr5unhqlghfbr" path="res://Art/Icon/Water.png" id="3_oirp2"]
+[ext_resource type="Texture2D" uid="uid://bnbqeyxnmbtye" path="res://Art/Player/Player_girl.png" id="4_vcaii"]
+[ext_resource type="Texture2D" uid="uid://bibkuh4m0u0m3" path="res://Art/Icon/emoji_face.png" id="5_2p2j1"]
+[ext_resource type="PackedScene" uid="uid://t6ng2t2ive67" path="res://Scene/texture_button_bag.tscn" id="5_27e20"]
+[ext_resource type="Texture2D" uid="uid://c00ldvnbjrevx" path="res://Art/Icon/energy.png" id="6_1stvw"]
+[ext_resource type="Texture2D" uid="uid://darb0nc3xbj7t" path="res://Art/Icon/money-800.png" id="7_5v3sn"]
+[ext_resource type="Texture2D" uid="uid://c0re6tk8tmpsi" path="res://Art/Icon/watering-can_5329669.png" id="8_gk3a5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x7ww"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wes0t"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma2lj"]
+bg_color = Color(0.235294, 0.235294, 0.235294, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1r5wm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvgp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_480b7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnl8l"]
+bg_color = Color(0.666667, 0.682353, 0.698039, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcoe2"]
+
+[node name="Farm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_Location" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Farm"
+
+[node name="GridContainer_Panel_Soil" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -196.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 20
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel_soil_1" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_1"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_1"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_1"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_1"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_soil_2" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_2"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_2"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_2"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_2"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_soil_3" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_3"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_3"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_3"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_3"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_soil_4" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_4"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_4"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_4"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_4"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_soil_5" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_5"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_5"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_5"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_5"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_soil_6" type="Panel" parent="GridContainer_Panel_Soil"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x7ww")
+
+[node name="Button" type="Button" parent="GridContainer_Panel_Soil/Panel_soil_6"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wes0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ma2lj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r5wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lvgp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_480b7")
+
+[node name="TextureRect_Water" type="TextureRect" parent="GridContainer_Panel_Soil/Panel_soil_6"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+texture = ExtResource("3_oirp2")
+
+[node name="Label_Plant_Name" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_6"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 89.0
+text = "Plant
+name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label_Plant_Remain" type="Label" parent="GridContainer_Panel_Soil/Panel_soil_6"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 12
+text = "remain : 0 day"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel_Player" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00173611
+anchor_top = 0.986111
+anchor_right = 0.00173611
+anchor_bottom = 0.986111
+offset_left = 10.0
+offset_top = -195.0
+offset_right = 210.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wnl8l")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel_Player"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.049
+anchor_right = 0.977
+anchor_bottom = 0.976
+offset_left = 0.0439997
+offset_top = -6.036
+offset_right = -0.0440063
+offset_bottom = -0.0640106
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vcaii")
+expand_mode = 1
+
+[node name="VBoxContainer_Status" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194444
+anchor_top = 0.802469
+anchor_right = 0.336111
+anchor_bottom = 0.971605
+offset_right = 40.8
+offset_bottom = 27.4
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="BoxContainer_Feel" type="BoxContainer" parent="VBoxContainer_Status"]
+layout_mode = 2
+
+[node name="TextureRect_Icon_Feel" type="TextureRect" parent="VBoxContainer_Status/BoxContainer_Feel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_2p2j1")
+expand_mode = 2
+
+[node name="Label_Feel" type="Label" parent="VBoxContainer_Status/BoxContainer_Feel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Feel good"
+
+[node name="BoxContainer_Energy" type="BoxContainer" parent="VBoxContainer_Status"]
+layout_mode = 2
+
+[node name="TextureRect_Icon_Energy" type="TextureRect" parent="VBoxContainer_Status/BoxContainer_Energy"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_1stvw")
+expand_mode = 1
+
+[node name="VBoxContainer_Energy" type="VBoxContainer" parent="VBoxContainer_Status/BoxContainer_Energy"]
+layout_mode = 2
+
+[node name="Label_Energy" type="Label" parent="VBoxContainer_Status/BoxContainer_Energy/VBoxContainer_Energy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "50/500"
+
+[node name="ProgressBar_Energy" type="ProgressBar" parent="VBoxContainer_Status/BoxContainer_Energy/VBoxContainer_Energy"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 500.0
+value = 50.0
+
+[node name="BoxContainer_Feel" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -74.0
+offset_right = -18.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect_Icon_Money" type="TextureRect" parent="BoxContainer_Feel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_5v3sn")
+expand_mode = 2
+
+[node name="Label_Money" type="Label" parent="BoxContainer_Feel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "9000￥"
+
+[node name="VBoxContainer_Location" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.195988
+anchor_right = 0.163194
+anchor_bottom = 0.671296
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Location_1" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location A"
+
+[node name="Button_Location_2" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location B"
+
+[node name="Button_Location_3" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location C"
+
+[node name="Button_Location_4" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location D"
+
+[node name="Button_Location_5" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location E"
+
+[node name="Button_Location_6" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Location F"
+
+[node name="Button_Location_7" type="Button" parent="VBoxContainer_Location"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mcoe2")
+text = "Farm "
+
+[node name="VBoxContainer_Watring" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -92.0
+offset_right = 368.0
+offset_bottom = 670.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+
+[node name="TextureButton_Watering" type="TextureButton" parent="VBoxContainer_Watring"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("8_gk3a5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_Watering" type="Label" parent="VBoxContainer_Watring"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 180
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_Bag" parent="." instance=ExtResource("5_27e20")]
+layout_mode = 1
+anchor_left = 0.875
+anchor_top = 0.0
+anchor_right = 0.875
+anchor_bottom = 0.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 1
+
+[connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_pressed"]
