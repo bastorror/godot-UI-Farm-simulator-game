@@ -1,6 +1,6 @@
 extends Button
 @onready var v_box_container_list_item = $"../../VBoxContainer_List_Item"
-var commit_item : Dictionary
+var commit_item : Dictionary = {}
 var current_node :Node
 var _name : String
 var qty : String
@@ -43,11 +43,12 @@ func _on_pressed():
 					
 		#check if qty or name is not null and qty != 0
 		if qty != null and _name != null and qty != "0":
-			
-			commit_item[i] = {}
-			commit_item[i].merge({"name" : _name})
-			commit_item[i].merge({"qty" : qty})
+			commit_item[commit_item.size()] = {}
+			commit_item[commit_item.size()-1].merge({"name" : _name})
+			commit_item[commit_item.size()-1].merge({"qty" : qty})
 		get_node("../../VBoxContainer_List_Item/VBoxContainer_Item"+str(i+1)+"/HBoxContainer_Item_1/Label_item_qty").reset_qty_value()
 	grid_container_bag.receive_item(commit_item)
+	#print("commit size " ,commit_item.size())
+	
 	commit_item.clear()
 	pass # Replace with function body.
