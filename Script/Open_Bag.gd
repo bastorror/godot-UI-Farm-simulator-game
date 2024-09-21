@@ -3,6 +3,7 @@ extends TextureButton
 var initial_modulate : Color = Color(0,0,0)
 @onready var panel_bag = $Panel_Bag
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_modulate = self_modulate

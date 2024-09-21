@@ -38,4 +38,46 @@ func receive_item(items : Dictionary):
 				break
 				
 	print(bag_dic)
+	display_items()
 	pass
+
+func display_items():
+	var count = 0
+	
+	#acess to each child of this node
+	for i in get_children():
+		
+		#acess to each child of child (Panel) 
+		for j in i.get_children():
+			
+			#check if that node is Label
+			if j is Label:
+				
+				# check node name
+				if j.name == "Label_Item_Name":
+					
+					#check if that dictionary key value not null
+					if bag_dic.get(count) != null:
+						
+						#set text in Label
+						j.text = bag_dic.get(count).get("name")
+						print("set name")
+						pass
+					else:
+						j.text = ""
+					
+				if j.name == "Label_Item_Remain":
+					if bag_dic.get(count) != null:
+						j.text = str(bag_dic.get(count).get("qty"))
+						print("set qty")
+						pass
+					else:
+						j.text = ""
+		count += 1
+	count = 0
+	pass
+
+
+func _on_visibility_changed():
+	display_items()	
+	pass # Replace with function body.

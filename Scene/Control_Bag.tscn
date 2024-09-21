@@ -806,5 +806,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8gg5u")
 text = "Confirm"
 script = ExtResource("3_4tb4c")
 
+[connection signal="visibility_changed" from="Panel_Bag/GridContainer_Bag" to="Panel_Bag/GridContainer_Bag" method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Reset" to="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Reset" method="_on_pressed"]
 [connection signal="pressed" from="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Confirm" to="Panel_Console/VBoxContainer_Console/HBoxContainer_Operate/Button_Confirm" method="_on_pressed"]
