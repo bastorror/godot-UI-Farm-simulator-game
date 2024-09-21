@@ -13,17 +13,27 @@ func _process(delta):
 	
 
 func receive_item(items : Dictionary):
-	#print("from Bag.gd(non-signal)", items)
+	# count items size
 	for i in items.size():
+		
+		# count bag_dic size
 		for j in bag_dic.size():
+			
+			#check if current key not null
 			if bag_dic.get(j) != null:
 				
+				#check if name in bag
 				if bag_dic.get(j).get("name") == items.get(i).get("name"):
+					
+					#add plus value to qty in dictionary
 					bag_dic[j]["qty"] += int(items.get(i).get("qty"))
 					break
 
 			else:
+				#change string qty to int
 				items[i]["qty"] = int(items.get(i).get("qty"))
+				
+				#add value dictionary to bag_dic
 				bag_dic[j] = items.get(i)
 				break
 				
