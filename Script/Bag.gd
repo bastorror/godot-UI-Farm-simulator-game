@@ -4,6 +4,7 @@ var bag_dic : Dictionary = {0 : null, 1 :null, 2 :null, 3 :null, 4 :null, 5 :nul
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -61,7 +62,7 @@ func display_items():
 						
 						#set text in Label
 						j.text = bag_dic.get(count).get("name")
-						print("set name")
+						#print("set name")
 						pass
 					else:
 						j.text = ""
@@ -69,15 +70,29 @@ func display_items():
 				if j.name == "Label_Item_Remain":
 					if bag_dic.get(count) != null:
 						j.text = str(bag_dic.get(count).get("qty"))
-						print("set qty")
+						#print("set qty")
 						pass
 					else:
 						j.text = ""
 		count += 1
 	count = 0
+	
 	pass
-
+	
 
 func _on_visibility_changed():
 	display_items()	
+	script_to_button_items()	
+	
 	pass # Replace with function body.
+
+func script_to_button_items():
+	for i in get_children():
+		for j in i.get_children():
+			if j is Button:
+				if j.get_script() == null:
+					j.set_script(load("res://Script/Button_item.gd"))
+					#print(j.name)
+					#print(j.get_script())
+				#else:
+					#print(j.get_script())	

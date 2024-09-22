@@ -25,7 +25,7 @@ func _process(delta):
 	
 	# one click decrease value
 	if button_decrease.button_pressed:
-		is_pressed_decrase = true		
+		is_pressed_decrase = true
 	if !button_decrease.button_pressed and is_pressed_decrase:
 		#print("press")
 		if qty > 0 :
