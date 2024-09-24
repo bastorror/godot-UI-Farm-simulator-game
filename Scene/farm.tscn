@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=22 format=3 uid="uid://bqv3rmqvg6a2o"]
 
 [ext_resource type="Script" path="res://Script/farm.gd" id="1_xug1j"]
+[ext_resource type="Script" path="res://Script/GridContainer_Panel_Soil.gd" id="2_ko83i"]
 [ext_resource type="Texture2D" uid="uid://cr5unhqlghfbr" path="res://Art/Icon/Water.png" id="3_oirp2"]
 [ext_resource type="Texture2D" uid="uid://bnbqeyxnmbtye" path="res://Art/Player/Player_girl.png" id="4_vcaii"]
 [ext_resource type="Texture2D" uid="uid://bibkuh4m0u0m3" path="res://Art/Icon/emoji_face.png" id="5_2p2j1"]
@@ -93,6 +94,7 @@ grow_vertical = 2
 theme_override_constants/h_separation = 90
 theme_override_constants/v_separation = 20
 columns = 3
+script = ExtResource("2_ko83i")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel_soil_1" type="Panel" parent="GridContainer_Panel_Soil"]
@@ -598,6 +600,7 @@ grow_horizontal = 1
 script = ExtResource("9_hadyl")
 
 [node name="Control_Bag" parent="." instance=ExtResource("11_pdcy5")]
+visible = false
 layout_mode = 1
 
 [node name="Holding_item" type="Node" parent="."]

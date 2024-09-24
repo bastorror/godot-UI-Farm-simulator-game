@@ -83,7 +83,7 @@ func display_items():
 func _on_visibility_changed():
 	display_items()	
 	script_to_button_items()	
-	
+	print("check")
 	pass # Replace with function body.
 
 func script_to_button_items():
@@ -91,6 +91,7 @@ func script_to_button_items():
 		for j in i.get_children():
 			if j is Button:
 				if j.get_script() == null:
+					j.set_process(true)
 					j.set_script(load("res://Script/Button_item.gd"))
 					#print(j.name)
 					#print(j.get_script())

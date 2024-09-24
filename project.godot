@@ -13,6 +13,9 @@ config_version=5
 config/name="UI_Farm_simulator"
 run/main_scene="res://Scene/farm.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [display]
