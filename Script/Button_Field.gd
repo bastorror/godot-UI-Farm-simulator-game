@@ -16,4 +16,6 @@ func _process(delta):
 		_name = get_parent().get_child(2).text
 		is_pressed = false
 	pass
+	
+
 
