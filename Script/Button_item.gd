@@ -22,15 +22,35 @@ func _process(delta):
 	if(button_pressed):
 		is_pressed = true
 	if !button_pressed and is_pressed:
-		#print(get_parent().name)
+		print(get_parent().name)
 		_name = get_parent().get_child(1).text
 		if(_name == "Flower"):
 			Select_item = {
 				"name" : "Flower",
 				"day" : 9,
+				"type" : "seed"
 			}
-			pass
-		hold_node.set_hold_item(get_select_item())
+		elif(_name == "Beans"):
+			Select_item = {
+				"name" : "Beans",
+				"day" : 12,
+				"type" : "seed"
+			} 
+		elif(_name == "Holy Basil"):
+			Select_item = {
+				"name" : "Holy Basil",
+				"day" : 5,
+				"type" : "seed"
+			}
+		elif(_name == "Cabbage"):
+			Select_item = {
+				"name" : "Cabbage",
+				"day" : 15,
+				"type" : "seed"
+			}
+			
+		if hold_node != null:
+			hold_node.set_hold_item(get_select_item())
 		is_pressed = false
 		pass
 
