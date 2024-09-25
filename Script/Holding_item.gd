@@ -6,6 +6,7 @@ func set_hold_item(select_item : Dictionary):
 	hold_item = select_item
 	print("from holding_item", hold_item)
 	
+	#check hold_item type
 	if hold_item.get("type") == "seed":
 		control_bag.visible = false;
 		

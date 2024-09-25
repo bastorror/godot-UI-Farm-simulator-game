@@ -18,11 +18,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#one press button
+	#--------------------------------------------------------------------------
 	if(button_pressed):
 		is_pressed = true
 	if !button_pressed and is_pressed:
-		#print(get_parent().name)
+		#call check_hold_node to make should there hold node in current scene
 		check_hold_node()		
+		
+		#asign name to _name variable
 		_name = get_parent().get_child(1).text
 		if(_name == "Flower"):
 			Select_item = {
@@ -50,10 +54,12 @@ func _process(delta):
 			}
 		if hold_node != null:
 			print("hold")
+			#call set_hold_item function for send item to hold item node
 			hold_node.set_hold_item(get_select_item())
 		is_pressed = false
 		pass
-
+	#--------------------------------------------------------------------------
+	
 func get_select_item():
 	print("from button_item : " ,Select_item)
 	return Select_item

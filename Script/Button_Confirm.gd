@@ -35,10 +35,10 @@ func _on_pressed():
 					#store item name to _name
 					_name = j.text
 					
-				#check child name					
+				#check child name
 				if j.name == "Label_item_qty":
 					
-					#store item name to _name					
+					#store item name to qty	
 					qty = j.text
 					
 		#check if qty or name is not null and qty != 0

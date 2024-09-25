@@ -4,6 +4,7 @@ var field_dic : Dictionary = {0 : null, 1 :null, 2 :null, 3 :null, 4 :null, 5 :n
 var water_status : TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	script_to_button_items()
 	display_field()
 	pass # Replace with function body.
 
@@ -19,6 +20,7 @@ func script_to_button_items():
 				if j.get_script() == null:
 					j.set_process(true)
 					j.set_script(load("res://Script/Button_Field.gd"))
+					
 func display_field():
 	var count = 0
 	
