@@ -32,15 +32,26 @@ func _process(delta):
 	pass
 
 func assign_hold_item_to_field():
+	var is_found_item : bool
+	
 	if holding_item.get_hold_item() != null:
 		planting_dic = holding_item.get_hold_item()
-		print(planting_dic)
+		print("this is pland dic : ",planting_dic)
 		if planting_dic.get("type") == "seed":
 			get_parent().get_child(2).text = planting_dic.get("name")
 			get_parent().get_child(3).text = str(planting_dic.get("day")) + " " + "days"
 			print(grid_container_bag.get_bag_dic())
 			grid_container_bag.decrease_item_qty_bag_dic(planting_dic.get("name"))
-			#print(grid_container_bag)
+			
+			for i in grid_container_bag.get_bag_dic().size():
+				if grid_container_bag.get_bag_dic().get(i) != null:
+					if grid_container_bag.get_bag_dic().get(i).get("name") == planting_dic.get("name"):
+						print("breaked")
+						is_found_item = true
+						break
+			if !is_found_item :
+				print("cleared")
+				planting_dic.clear()
 	pass
 
 
