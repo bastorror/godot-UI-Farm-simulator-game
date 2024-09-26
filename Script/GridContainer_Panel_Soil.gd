@@ -46,7 +46,7 @@ func display_field():
 						pass
 					else:
 						j.text = ""
-						water_status.texture = null
+						water_status.visible = false
 					
 				if j.name == "Label_Plant_Remain":
 					if field_dic.get(count) != null:
@@ -55,7 +55,7 @@ func display_field():
 						pass
 					else:
 						j.text = ""
-		water_status = null
+		#water_status = null
 		count += 1
 	count = 0
 	

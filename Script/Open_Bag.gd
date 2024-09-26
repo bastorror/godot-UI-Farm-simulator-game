@@ -2,6 +2,7 @@ extends TextureButton
 
 var initial_modulate : Color = Color(0,0,0)
 @onready var panel_bag = $Panel_Bag
+@onready var texture_button_watering = $"../VBoxContainer_Watring/TextureButton_Watering"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +23,7 @@ func _on_pressed():
 	if control_bag != null:
 		if !control_bag.visible:
 			control_bag.visible = true
+			texture_button_watering.clear_icon_at_mouse()
 		else:
 			control_bag.visible = false
 	else:

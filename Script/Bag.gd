@@ -31,16 +31,6 @@ func receive_item(items : Dictionary):
 				if j >= bag_dic.size()-1:
 					for k in bag_dic.size():
 						
-						##check if current key not null
-						#if bag_dic.get(k) != null:
-							#
-							##check if name in bag
-							#if bag_dic.get(k).get("name") == items.get(i).get("name"):
-								#
-								##add plus value to qty in dictionary
-								#bag_dic[k]["qty"] += int(items.get(i).get("qty"))
-								#break
-						
 						if bag_dic.get(k) == null:
 							#change string qty to int
 							items[i]["qty"] = int(items.get(i).get("qty"))

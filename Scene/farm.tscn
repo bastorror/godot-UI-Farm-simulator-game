@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=23 format=3 uid="uid://bqv3rmqvg6a2o"]
 
 [ext_resource type="Script" path="res://Script/farm.gd" id="1_xug1j"]
 [ext_resource type="Script" path="res://Script/GridContainer_Panel_Soil.gd" id="2_ko83i"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b7g3l43jdhkvm" path="res://Art/Icon/sunny_icon.png" id="7_vikjf"]
 [ext_resource type="Texture2D" uid="uid://c0re6tk8tmpsi" path="res://Art/Icon/watering-can_5329669.png" id="8_gk3a5"]
 [ext_resource type="Script" path="res://Script/test.gd" id="9_hadyl"]
+[ext_resource type="Script" path="res://Script/TextureButton_Watering.gd" id="10_xrx28"]
 [ext_resource type="PackedScene" uid="uid://dillqd57xtsj4" path="res://Scene/Control_Bag.tscn" id="11_pdcy5"]
 [ext_resource type="Script" path="res://Script/Holding_item.gd" id="12_bydsb"]
 
@@ -96,6 +97,7 @@ theme_override_constants/v_separation = 20
 columns = 3
 script = ExtResource("2_ko83i")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="Panel_soil_1" type="Panel" parent="GridContainer_Panel_Soil"]
 custom_minimum_size = Vector2(150, 150)
@@ -577,6 +579,7 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture_normal = ExtResource("8_gk3a5")
+script = ExtResource("10_xrx28")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Watering" type="Label" parent="VBoxContainer_Watring"]
@@ -596,7 +599,7 @@ offset_right = 512.0
 offset_bottom = 512.0
 grow_horizontal = 1
 
-[node name="Node_test" type="Node" parent="."]
+[node name="Node_test" type="Node2D" parent="."]
 script = ExtResource("9_hadyl")
 
 [node name="Control_Bag" parent="." instance=ExtResource("11_pdcy5")]
@@ -605,6 +608,12 @@ layout_mode = 1
 
 [node name="Holding_item" type="Node" parent="."]
 script = ExtResource("12_bydsb")
+
+[node name="Watering-can_hold" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(584, 776)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_gk3a5")
 
 [connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_exited"]
