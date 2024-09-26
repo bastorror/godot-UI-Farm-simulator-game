@@ -2,7 +2,7 @@ extends Node
 var hold_item : Dictionary
 @onready var control_bag = $"../Control_Bag"
 @onready var texture_button_watering = $"../VBoxContainer_Watring/TextureButton_Watering"
-var is_hold_watering : bool
+var is_hold_watering = false
 
 func set_hold_item(select_item : Dictionary):
 	hold_item = select_item

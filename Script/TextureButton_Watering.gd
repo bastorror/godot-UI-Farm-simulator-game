@@ -28,6 +28,7 @@ func _on_pressed():
 			holding_item.set_hold_watering()
 		else:
 			clear_icon_at_mouse()
+			holding_item.clear_hold_watering()
 			is_holded_watering = false
 
 	else:
