@@ -53,7 +53,6 @@ func _process(delta):
 				"type" : "seed"
 			}
 		if hold_node != null:
-			print("hold")
 			#call set_hold_item function for send item to hold item node
 			hold_node.set_hold_item(get_select_item())
 		is_pressed = false
@@ -61,7 +60,6 @@ func _process(delta):
 	#--------------------------------------------------------------------------
 	
 func get_select_item():
-	print("from button_item : " ,Select_item)
 	return Select_item
 
 func check_hold_node():
