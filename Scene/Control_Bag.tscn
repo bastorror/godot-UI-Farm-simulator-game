@@ -18,12 +18,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r3l5"]
-bg_color = Color(0.176471, 0.176471, 0.176471, 0)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd006"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycuqf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvo1u"]
 bg_color = Color(0.235294, 0.235294, 0.235294, 1)
@@ -34,9 +31,12 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2yr8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycuqf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd006"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r3l5"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qixb"]
 bg_color = Color(0.235294, 0.235294, 0.235294, 1)
@@ -113,11 +113,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_1"]
@@ -159,11 +159,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_2"]
@@ -205,11 +205,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_3"]
@@ -251,11 +251,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_4"]
@@ -297,11 +297,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_5"]
@@ -343,11 +343,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_6"]
@@ -389,11 +389,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_7"]
@@ -435,11 +435,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_8"]
@@ -481,11 +481,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvo1u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2yr8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ycuqf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd006")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1r3l5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Item_Name" type="Label" parent="Panel_Bag/GridContainer_Bag/Panel_bag_9"]
