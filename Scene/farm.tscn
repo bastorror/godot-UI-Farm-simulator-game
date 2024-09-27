@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=29 format=3 uid="uid://bqv3rmqvg6a2o"]
 
 [ext_resource type="Script" path="res://Script/farm.gd" id="1_xug1j"]
 [ext_resource type="Script" path="res://Script/GridContainer_Panel_Soil.gd" id="2_ko83i"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Script/TextureButton_Refill.gd" id="12_eyt17"]
 [ext_resource type="AudioStream" uid="uid://bxt4re383wacy" path="res://Sound/Music/konosuba_ed_cover.wav" id="17_qihvm"]
 [ext_resource type="Script" path="res://Script/energy.gd" id="18_yyvt4"]
+[ext_resource type="Script" path="res://Script/day_system.gd" id="19_i42hi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x7ww"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 1)
@@ -60,6 +61,8 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcoe2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rch0v"]
 
 [node name="Farm" type="Control"]
 layout_mode = 3
@@ -498,17 +501,27 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_filter = 2
 
 [node name="TextureRect_Icon_Time_Period" type="TextureRect" parent="BoxContainer_Time"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_vikjf")
 expand_mode = 2
 
-[node name="Label_Time_Descript" type="Label" parent="BoxContainer_Time"]
+[node name="VBoxContainer_detail" type="VBoxContainer" parent="BoxContainer_Time"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label_Time_Descript" type="Label" parent="BoxContainer_Time/VBoxContainer_detail"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Day"
+
+[node name="Label_Date" type="Label" parent="BoxContainer_Time/VBoxContainer_detail"]
+layout_mode = 2
+text = "Aug/12/2024"
 
 [node name="VBoxContainer_Location" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -639,9 +652,37 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("18_yyvt4")
 
+[node name="Day_system" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 91.0
+offset_top = 64.0
+offset_right = 131.0
+offset_bottom = 104.0
+script = ExtResource("19_i42hi")
+
+[node name="Button_skip_day" type="Button" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 48.0
+offset_right = 961.0
+offset_bottom = 79.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rch0v")
+text = "Skip day"
+
+[node name="Button_skip_period" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 48.0
+offset_right = 863.0
+offset_bottom = 79.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rch0v")
+text = "Skip period"
+
 [connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Refill" to="VBoxContainer_Watring/TextureButton_Refill" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Refill" to="VBoxContainer_Watring/TextureButton_Refill" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer_Watring/TextureButton_Refill" to="VBoxContainer_Watring/TextureButton_Refill" method="_on_pressed"]
+[connection signal="pressed" from="Button_skip_day" to="Day_system" method="_on_button_skip_day_pressed"]
+[connection signal="pressed" from="Button_skip_period" to="Day_system" method="_on_button_skip_period_pressed"]
