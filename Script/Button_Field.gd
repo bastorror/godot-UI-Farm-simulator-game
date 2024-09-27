@@ -8,6 +8,7 @@ var grid_container_bag : Node
 var water_status : TextureRect
 var is_planted : bool
 var is_watered : bool
+var energy_node : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +27,7 @@ func _process(delta):
 		#check that plant over field
 		if is_planted:
 			water_plant()
+			
 		
 		#check if holding item and water_status node not null
 		if holding_item != null and water_status != null:
@@ -85,17 +87,31 @@ func water_plant():
 			
 			# check if field need water and hold item qty is more than 0
 			if water_status.visible and (holding_item.get_texture_button_watering().get_current_watering() > 0):
-				print("watering")
-				
-				#decrease water in watering can by 1 then invisiblle water status and mark field as watered
-				holding_item.get_texture_button_watering().decrease_curent_watring(1)
-				water_status.visible = false
-				is_watered = true
-				if holding_item.get_texture_button_watering().get_current_watering() <= 0:
-					print("out of water...")
-					pass
+				check_energy_node()
+				if energy_node.get_current_energy_value() - 20 >= 0:
+					use_energy()
+					print("watering")
+					
+					#decrease water in watering can by 1 then invisiblle water status and mark field as watered
+					holding_item.get_texture_button_watering().decrease_curent_watring(1)
+					water_status.visible = false
+					is_watered = true
+					if holding_item.get_texture_button_watering().get_current_watering() <= 0:
+						print("out of water...")
+						pass
+				else:
+					print("out of energy")
 			else:
-					print("out of water...")
+					print("water already")
 				
 			pass
 		pass
+
+func check_energy_node() -> void:
+	if energy_node != null:
+		pass
+	else:
+		energy_node = get_parent().get_parent().get_parent().get_node("Energy")
+func use_energy() -> void:
+	check_energy_node()
+	energy_node.decrease_current_energy_value(20)

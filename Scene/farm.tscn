@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=27 format=3 uid="uid://bqv3rmqvg6a2o"]
 
 [ext_resource type="Script" path="res://Script/farm.gd" id="1_xug1j"]
 [ext_resource type="Script" path="res://Script/GridContainer_Panel_Soil.gd" id="2_ko83i"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Script/Holding_item.gd" id="12_bydsb"]
 [ext_resource type="Script" path="res://Script/TextureButton_Refill.gd" id="12_eyt17"]
 [ext_resource type="AudioStream" uid="uid://bxt4re383wacy" path="res://Sound/Music/konosuba_ed_cover.wav" id="17_qihvm"]
+[ext_resource type="Script" path="res://Script/energy.gd" id="18_yyvt4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x7ww"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 1)
@@ -631,6 +632,12 @@ texture = ExtResource("8_gk3a5")
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_qihvm")
 autoplay = true
+
+[node name="Energy" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("18_yyvt4")
 
 [connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_exited"]
