@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1727430993|7116212886';
+const CACHE_VERSION = '1727550071|9703942276';
 /** @type {string} */
 const CACHE_PREFIX = 'UI_Farm_simulato-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
