@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bqv3rmqvg6a2o"]
+[gd_scene load_steps=30 format=3 uid="uid://bqv3rmqvg6a2o"]
 
 [ext_resource type="Script" path="res://Script/farm.gd" id="1_xug1j"]
 [ext_resource type="Script" path="res://Script/GridContainer_Panel_Soil.gd" id="2_ko83i"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://bxt4re383wacy" path="res://Sound/Music/konosuba_ed_cover.wav" id="17_qihvm"]
 [ext_resource type="Script" path="res://Script/energy.gd" id="18_yyvt4"]
 [ext_resource type="Script" path="res://Script/day_system.gd" id="19_i42hi"]
+[ext_resource type="Script" path="res://Script/money_system.gd" id="20_l06cg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x7ww"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 1)
@@ -465,7 +466,7 @@ layout_mode = 2
 max_value = 500.0
 value = 50.0
 
-[node name="BoxContainer_Feel" type="BoxContainer" parent="."]
+[node name="BoxContainer_Money" type="BoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -479,13 +480,13 @@ offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect_Icon_Money" type="TextureRect" parent="BoxContainer_Feel"]
+[node name="TextureRect_Icon_Money" type="TextureRect" parent="BoxContainer_Money"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("7_5v3sn")
 expand_mode = 2
 
-[node name="Label_Money" type="Label" parent="BoxContainer_Feel"]
+[node name="Label_Money" type="Label" parent="BoxContainer_Money"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "9000￥"
@@ -651,6 +652,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("18_yyvt4")
+current_energy_value = 100.0
+max_energy_value = 1000.0
 
 [node name="Day_system" type="Control" parent="."]
 anchors_preset = 0
@@ -659,6 +662,14 @@ offset_top = 64.0
 offset_right = 131.0
 offset_bottom = 104.0
 script = ExtResource("19_i42hi")
+
+[node name="Money_system" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1014.0
+offset_top = 580.0
+offset_right = 1054.0
+offset_bottom = 620.0
+script = ExtResource("20_l06cg")
 
 [node name="Button_skip_day" type="Button" parent="."]
 layout_mode = 0

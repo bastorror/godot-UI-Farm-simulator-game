@@ -9,6 +9,11 @@ var water_status : TextureRect
 var is_planted : bool
 var is_watered : bool
 var energy_node : Node
+var plant_day : int
+var count = 0
+var money_system : Node
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +22,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	if(button_pressed):
 		is_pressed = true
 	if !button_pressed and is_pressed:
@@ -54,14 +58,15 @@ func assign_hold_item_to_field():
 		if holding_item.get_hold_item() != {}:
 			
 			# assign hold dic to planting_dic variable
-			planting_dic = holding_item.get_hold_item()
+			#planting_dic = holding_item.get_hold_item()
 			
 			#check planting_dic value of "type" key is "seed" 
-			if planting_dic.get("type") == "seed":
+			if holding_item.get_hold_item().get("type") == "seed":
 				
-				# assign value in planting_dic to label
-				get_parent().get_child(2).text = planting_dic.get("name")
-				get_parent().get_child(3).text = str(planting_dic.get("day")) + " " + "days"
+				# assign value in planting_dic to label and display
+				if planting_dic == { }:
+					planting_dic = holding_item.get_hold_item()
+				display_plant()
 				
 				# decrease qty in bag dic then visible water icon and mark this field as planted
 				grid_container_bag.decrease_item_qty_bag_dic(planting_dic.get("name"))
@@ -71,11 +76,15 @@ func assign_hold_item_to_field():
 				#check if hold item is empty clear hold item
 				for i in grid_container_bag.get_bag_dic().size():
 					if grid_container_bag.get_bag_dic().get(i) != null:
-						if grid_container_bag.get_bag_dic().get(i).get("name") == planting_dic.get("name"):
+						if grid_container_bag.get_bag_dic().get(i).get("name") == holding_item.get_hold_item().get("name"):
 							is_found_item = true
+							
 							break
 				if !is_found_item :
-					planting_dic.clear()
+					holding_item.set_hold_item({})
+					print(planting_dic)
+					
+					
 
 func water_plant():
 	
@@ -90,7 +99,7 @@ func water_plant():
 				check_energy_node()
 				if energy_node.get_current_energy_value() - 20 >= 0:
 					use_energy()
-					print("watering")
+					#print("watering")
 					
 					#decrease water in watering can by 1 then invisiblle water status and mark field as watered
 					holding_item.get_texture_button_watering().decrease_curent_watring(1)
@@ -115,3 +124,54 @@ func check_energy_node() -> void:
 func use_energy() -> void:
 	check_energy_node()
 	energy_node.decrease_current_energy_value(20)
+
+func plant_progress() -> void:
+	if planting_dic != {} and is_watered:
+		var one_num = get_parent().get_child(3).text[0]
+		var two_num = get_parent().get_child(3).text[0] + get_parent().get_child(3).text[1]
+		if two_num is String:
+			print(two_num)
+			planting_dic["day"] = int(two_num)
+		else:
+			print(one_num)
+			planting_dic["day"] = int(one_num)
+		#planting_dic["day"] = get_parent().get_child(3).text[0]
+		planting_dic["day"] = planting_dic.get("day") - 1
+		if planting_dic["day"] <= 0:
+			fully_plant()
+		else:
+			need_water()
+		display_plant()
+	pass
+
+
+func display_plant() -> void:
+	if planting_dic != {}:
+		get_parent().get_child(2).text = planting_dic.get("name")
+		get_parent().get_child(3).text = str(planting_dic.get("day")) + " " + "days"
+	else:
+		get_parent().get_child(2).text = ""
+		get_parent().get_child(3).text = ""
+		
+	pass
+
+func fully_plant() -> void:
+	auto_sell_plant()
+	planting_dic = {}
+	is_planted = false
+	
+	pass
+
+func auto_sell_plant() -> void:
+	if money_system != null:
+		money_system.increase_money(planting_dic.get("profit"))
+		print(planting_dic)
+	else:
+		money_system = get_parent().get_parent().get_parent().get_node("Money_system")
+		auto_sell_plant()
+	print(money_system)
+	pass
+
+func need_water() -> void:
+	is_watered = false
+	water_status.visible = true

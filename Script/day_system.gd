@@ -7,11 +7,17 @@ var current_month : int = 11
 var current_time_period : int = 0
 var date_value : int = 1
 var year_value : int = 2024
+
+var panel_soil : Node
+var button_field : Node
 @onready var box_container_time: BoxContainer = $"../BoxContainer_Time"
+@onready var energy_node: Control = $"../Energy"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	display_date()
+	check_button_field()
 	pass # Replace with function body.
 
 
@@ -37,7 +43,12 @@ func date_progress() -> void:
 			current_month = 0
 		date_value = 1
 	current_time_period = 0
+	energy_node.increase_current_energy_value(energy_node.get_max_energy_value())
+	if energy_node.get_current_energy_value() > energy_node.get_max_energy_value():
+		energy_node.set_current_energy_value(energy_node.get_max_energy_value())
 	display_date()
+	day_plant_progress()
+	
 
 func display_date() -> void:
 	var date = box_container_time.get_child(1).get_child(1)
@@ -55,4 +66,24 @@ func day_progress() -> void:
 		current_time_period = 0
 		date_progress()
 	display_date()
+	energy_node.increase_current_energy_value(200)
+	if energy_node.get_current_energy_value() > energy_node.get_max_energy_value():
+		energy_node.set_current_energy_value(energy_node.get_max_energy_value())
+	
+	pass
+
+func check_button_field() -> void:
+	if panel_soil != null:
+		pass
+	else:
+		panel_soil = get_parent().get_node("GridContainer_Panel_Soil")
+	pass
+
+func day_plant_progress() -> void:
+	for i in panel_soil.get_children():
+		
+		button_field = i.get_child(0)
+		button_field.plant_progress()
+		
+		pass
 	pass

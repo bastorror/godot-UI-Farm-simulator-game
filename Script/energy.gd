@@ -1,7 +1,7 @@
 extends Control
 
-@export var current_energy_value : float = 500
-@export var max_energy_value : float = 500
+@export var current_energy_value : float 
+@export var max_energy_value : float 
 @onready var label_energy: Label = $"../VBoxContainer_Status/BoxContainer_Energy/VBoxContainer_Energy/Label_Energy"
 @onready var progress_bar_energy: ProgressBar = $"../VBoxContainer_Status/BoxContainer_Energy/VBoxContainer_Energy/ProgressBar_Energy"
 
@@ -22,6 +22,7 @@ func display_energy_label() -> void:
 
 func display_energy_progressbar() -> void:
 	progress_bar_energy.value = current_energy_value
+	progress_bar_energy.max_value = max_energy_value
 	pass
 
 func decrease_current_energy_value(value: float) -> void:
@@ -30,6 +31,14 @@ func decrease_current_energy_value(value: float) -> void:
 		display_energy_label()
 		display_energy_progressbar()
 		print(current_energy_value)
+
+func increase_current_energy_value(value: float) -> void:
+	current_energy_value += value
+	display_energy_label()
+	display_energy_progressbar()
+
+func get_max_energy_value() -> float:
+	return max_energy_value
 
 func get_current_energy_value() -> float:
 	#print("from get ",current_energy_value)

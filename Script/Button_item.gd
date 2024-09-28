@@ -32,25 +32,29 @@ func _process(delta):
 			Select_item = {
 				"name" : "Flower",
 				"day" : 9,
-				"type" : "seed"
+				"type" : "seed",
+				"profit" : 500
 			}
 		elif(_name == "Beans"):
 			Select_item = {
 				"name" : "Beans",
 				"day" : 12,
-				"type" : "seed"
+				"type" : "seed",
+				"profit" : 250
 			} 
 		elif(_name == "Holy Basil"):
 			Select_item = {
 				"name" : "Holy Basil",
 				"day" : 5,
-				"type" : "seed"
+				"type" : "seed",
+				"profit" : 700
 			}
 		elif(_name == "Cabbage"):
 			Select_item = {
 				"name" : "Cabbage",
 				"day" : 15,
-				"type" : "seed"
+				"type" : "seed",
+				"profit" : 1000
 			}
 		if hold_node != null:
 			#call set_hold_item function for send item to hold item node

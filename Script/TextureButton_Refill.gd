@@ -2,6 +2,7 @@ extends TextureButton
 
 var initial_modulate : Color = Color(0,0,0)
 @onready var texture_button_watering = $"../TextureButton_Watering"
+@onready var energy_node: Control = $"../../Energy"
 
 
 
@@ -21,7 +22,9 @@ func _process(delta):
 
 
 func _on_pressed():
-	texture_button_watering.set_current_watering(texture_button_watering.get_max_watering())
+	if energy_node.get_current_energy_value() - 20 > 0:
+		texture_button_watering.set_current_watering(texture_button_watering.get_max_watering())
+		energy_node.decrease_current_energy_value(20)
 	pass
 	
 	#print("open bag")
