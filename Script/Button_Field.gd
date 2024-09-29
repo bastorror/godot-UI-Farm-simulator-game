@@ -12,6 +12,7 @@ var energy_node : Node
 var plant_day : int
 var count = 0
 var money_system : Node
+var count_to_dead : int = 0
 
 
 
@@ -126,22 +127,29 @@ func use_energy() -> void:
 	energy_node.decrease_current_energy_value(20)
 
 func plant_progress() -> void:
-	if planting_dic != {} and is_watered:
-		var one_num = get_parent().get_child(3).text[0]
-		var two_num = get_parent().get_child(3).text[0] + get_parent().get_child(3).text[1]
-		if two_num is String:
-			print(two_num)
-			planting_dic["day"] = int(two_num)
+	if planting_dic != {}:
+		if is_watered:
+			count_to_dead = 0
+			var one_num = get_parent().get_child(3).text[0]
+			var two_num = get_parent().get_child(3).text[0] + get_parent().get_child(3).text[1]
+			if two_num is String:
+				print(two_num)
+				planting_dic["day"] = int(two_num)
+			else:
+				print(one_num)
+				planting_dic["day"] = int(one_num)
+			#planting_dic["day"] = get_parent().get_child(3).text[0]
+			planting_dic["day"] = planting_dic.get("day") - 1
+			if planting_dic["day"] <= 0:
+				fully_plant()
+			else:
+				need_water()
+			display_plant()
 		else:
-			print(one_num)
-			planting_dic["day"] = int(one_num)
-		#planting_dic["day"] = get_parent().get_child(3).text[0]
-		planting_dic["day"] = planting_dic.get("day") - 1
-		if planting_dic["day"] <= 0:
-			fully_plant()
-		else:
-			need_water()
-		display_plant()
+			count_to_dead += 1
+			print(count_to_dead)
+			if count_to_dead > 3 :
+				dead_plant()
 	pass
 
 
@@ -157,9 +165,7 @@ func display_plant() -> void:
 
 func fully_plant() -> void:
 	auto_sell_plant()
-	planting_dic = {}
-	is_planted = false
-	
+	reset_field()
 	pass
 
 func auto_sell_plant() -> void:
@@ -175,3 +181,16 @@ func auto_sell_plant() -> void:
 func need_water() -> void:
 	is_watered = false
 	water_status.visible = true
+
+func dead_plant() -> void:
+	reset_field()
+	pass
+
+func reset_field() -> void:
+	planting_dic = {}
+	count_to_dead = 0
+	is_planted = false
+	is_watered = false
+	water_status.visible = false
+	display_plant()
+	pass

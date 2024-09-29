@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://boigriha50dt6" path="res://Art/Icon/refill_water.png" id="11_r4w4u"]
 [ext_resource type="Script" path="res://Script/Holding_item.gd" id="12_bydsb"]
 [ext_resource type="Script" path="res://Script/TextureButton_Refill.gd" id="12_eyt17"]
-[ext_resource type="AudioStream" uid="uid://bxt4re383wacy" path="res://Sound/Music/konosuba_ed_cover.wav" id="17_qihvm"]
+[ext_resource type="AudioStream" uid="uid://baq2yp5eylpsi" path="res://Sound/Music/TheFatRat - Oblivion (feat. Lola Blanc).wav" id="17_g8kw3"]
 [ext_resource type="Script" path="res://Script/energy.gd" id="18_yyvt4"]
 [ext_resource type="Script" path="res://Script/day_system.gd" id="19_i42hi"]
 [ext_resource type="Script" path="res://Script/money_system.gd" id="20_l06cg"]
@@ -644,7 +644,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("8_gk3a5")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_qihvm")
+stream = ExtResource("17_g8kw3")
 autoplay = true
 
 [node name="Energy" type="Control" parent="."]
@@ -672,22 +672,27 @@ offset_bottom = 620.0
 script = ExtResource("20_l06cg")
 
 [node name="Button_skip_day" type="Button" parent="."]
-layout_mode = 0
-offset_left = 888.0
-offset_top = 48.0
-offset_right = 961.0
-offset_bottom = 79.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777778
+anchor_top = 0.0740741
+anchor_right = 0.841146
+anchor_bottom = 0.121914
+grow_horizontal = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rch0v")
 text = "Skip day"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button_skip_period" type="Button" parent="."]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 48.0
-offset_right = 863.0
-offset_bottom = 79.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.666667
+anchor_top = 0.0740741
+anchor_right = 0.749132
+anchor_bottom = 0.121914
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rch0v")
 text = "Skip period"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer_Watring/TextureButton_Watering" to="VBoxContainer_Watring/TextureButton_Watering" method="_on_mouse_exited"]
